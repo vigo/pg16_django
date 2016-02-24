@@ -13,7 +13,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=POST_STATUS, default=1,)
-    published_date = models.DateTimeField()
+    published_at = models.DateTimeField()
     title = models.CharField(max_length=255)
     body = models.TextField()
 
