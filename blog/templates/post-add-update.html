@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load humanize %}
+
+{% block html_title %} : {% if object %}Güncelle : {{ object.title }}{% else %}Yeni Ekle{% endif %}{% endblock %}
+
+{% block content %}
+    {% include "header.html" %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="post-add-update">
+                    <form class="form-horizontal" action="" method="post">{% csrf_token %}
+                        {{ form.as_p }}
+                        <input class="btn btn-lg btn-primary" type="submit" value="{% if object %}Güncelle{% else %}Yeni Ekle{% endif %}" />
+                        <a class="btn btn-lg btn-info" href="{% url 'post-list' %}">İptal</a>
+                        {% if object %}<a class="btn btn-lg btn-danger pull-right" href="{{ object.get_delete_url }}">Sil</a>{% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+{% endblock content %}
