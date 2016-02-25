@@ -14,9 +14,9 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=POST_STATUS, default=1,)
-    published_at = models.DateTimeField()
-    title = models.CharField(max_length=255)
-    body = models.TextField()
+    published_at = models.DateTimeField(verbose_name=u"Yayınlanma Tarihi")
+    title = models.CharField(max_length=255, verbose_name=u"Başlık")
+    body = models.TextField(verbose_name=u"Yazı")
     
     def get_delete_url(self):
         return reverse('post-delete', args=[self.pk])
