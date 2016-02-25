@@ -1,0 +1,75 @@
+header {
+    padding: 8em 0 1em;
+    background-color: #b3afdb;
+}
+
+header h1,
+header h1 small {
+    color: #807ca8;
+}
+
+header h1 a {
+    color: inherit;
+}
+
+footer {
+    margin: 3em 0 0 0;
+    padding: 2em 0 0 0;
+    background-color: #000;
+    color: #555;
+}
+
+
+.post-list {
+/*    border-bottom: 1px solid #000;*/
+}
+
+.post-list li {
+    margin: 2em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-list a {
+    color: #706b97;
+    font-size: 1.6em;
+    display: block;
+}
+
+.post-list time {
+    margin-bottom: 2em;
+    display: block;
+}
+
+
+#post-detail {}
+
+#post-detail h1 {
+    color: #2077b2;
+    margin-bottom: 1em;
+}
+
+#post-detail-body {
+    font-size: 1.4em;
+    padding-bottom: 2em;
+}
+
+
+#post-add-update,
+#post-check-delete {
+    padding: 3em 0;
+}
+
+#post-add-update label {
+    display: block;
+    font-size: 1.4em;
+}
+
+#post-add-update p {
+    margin-bottom: 2.4em;
+}
+
+#post-add-update input[type="text"],
+#post-add-update textarea {
+    width: 72em;
+    padding: 1em;
+}
