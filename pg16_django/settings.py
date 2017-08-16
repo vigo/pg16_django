@@ -6,8 +6,8 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x0q)9y(#r5qk_b2nw4=*jkldteveik^k)qdv60#lxcmym-e%*p'
 DEBUG = True
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
 
@@ -81,6 +82,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
