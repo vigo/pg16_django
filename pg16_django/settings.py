@@ -4,6 +4,7 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 SECRET_KEY = 'x0q)9y(#r5qk_b2nw4=*jkldteveik^k)qdv60#lxcmym-e%*p'
 DEBUG = os.environ.get('DEBUG', False)
 
@@ -83,12 +84,12 @@ USE_L10N = True
 USE_TZ = True
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 INSTALLED_APPS += [
