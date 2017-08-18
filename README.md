@@ -18,8 +18,8 @@ git clone https://github.com/vigo/pg16_django
 
 cd pg16_django/
 python manage.py migrate
-python migrate.py createsuperuser  # admin panel için kullanıcı oluşturun
-python manage.py runserver         # geliştirme yapmak için sunucuyu çalıştırın
+python migrate.py createsuperuser     # admin panel için kullanıcı oluşturun
+DEBUG=True python manage.py runserver # geliştirme yapmak için sunucuyu çalıştırın
 ```
 
 Şimdi [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)

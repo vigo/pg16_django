@@ -5,7 +5,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x0q)9y(#r5qk_b2nw4=*jkldteveik^k)qdv60#lxcmym-e%*p'
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
